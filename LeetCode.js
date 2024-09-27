@@ -398,21 +398,78 @@
 // Explanation: The two input promises resolve with the values of 10 and -12 respectively. The returned promise should resolve with a value of 10 + -12 = -2.
 
 
-/**
- * @param {Promise} promise1
- * @param {Promise} promise2
- * @return {Promise}
- */
-var addTwoPromises = async function(promise1, promise2) {
-    var a=await promise1
-    var b=await promise2
-    return a+b
-};
+// /**
+//  * @param {Promise} promise1
+//  * @param {Promise} promise2
+//  * @return {Promise}
+//  */
+// var addTwoPromises = async function(promise1, promise2) {
+//     var a=await promise1
+//     var b=await promise2
+//     return a+b
+// };
 
 /**
  * addTwoPromises(Promise.resolve(2), Promise.resolve(2))
  *   .then(console.log); // 4
  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//9
+// Write code that enhances all arrays such that you can call the array.last() method on any array and it will return the last element. If there are no elements in the array, it should return -1.
+
+// You may assume the array is the output of JSON.parse.
+
+ 
+
+// Example 1:
+
+// Input: nums = [null, {}, 3]
+// Output: 3
+// Explanation: Calling nums.last() should return the last element: 3.
+
+// Example 2:
+
+// Input: nums = []
+// Output: -1
+// Explanation: Because there are no elements, return -1.
+
+/**
+ * @return {null|boolean|number|string|Array|Object}
+ */
+Array.prototype.last = function() {
+    var l=this.length
+    if(l==0){
+        return -1
+    }else{
+        return this[l-1]
+    }
+};
+
+/**
+ * const arr = [1, 2, 3];
+ * arr.last(); // 3
+ */
+
+ 
 
 
 
