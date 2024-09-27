@@ -452,25 +452,60 @@
 // Output: -1
 // Explanation: Because there are no elements, return -1.
 
-/**
- * @return {null|boolean|number|string|Array|Object}
- */
-Array.prototype.last = function() {
-    var l=this.length
-    if(l==0){
-        return -1
-    }else{
-        return this[l-1]
-    }
-};
+// /**
+//  * @return {null|boolean|number|string|Array|Object}
+//  */
+// Array.prototype.last = function() {
+//     var l=this.length
+//     if(l==0){
+//         return -1
+//     }else{
+//         return this[l-1]
+//     }
+// };
 
-/**
- * const arr = [1, 2, 3];
- * arr.last(); // 3
- */
+// /**
+//  * const arr = [1, 2, 3];
+//  * arr.last(); // 3
+//  */
+
+//10
+// Given an integer x, return true if x is a
+// palindrome
+// , and false otherwise.
 
  
 
+// Example 1:
 
+// Input: x = 121
+// Output: true
+// Explanation: 121 reads as 121 from left to right and from right to left.
 
+// Example 2:
+
+// Input: x = -121
+// Output: false
+// Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+
+// Example 3:
+
+// Input: x = 10
+// Output: false
+// Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    var a=x
+    var b=a.toString()
+ var result =0
+ for(let x=b.length-1;x>=0;x--){
+     result+=b[x]
+ }
  
+    
+     return result==a
+ };
