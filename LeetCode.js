@@ -582,69 +582,98 @@
 // Output: 1994
 // Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
-/**
- * @param {string} s
- * @return {number}
- */
-var romanToInt = function(s) {
-    var result =0
-    for(let i=0;i<s.length;i++){
-        if(s[i]=="I"){
-            if(s[i+1]=="V"||s[i+1]=="X"){
-                continue;
-            }else{
-            result+=1
-            }
+// /**
+//  * @param {string} s
+//  * @return {number}
+//  */
+// var romanToInt = function(s) {
+//     var result =0
+//     for(let i=0;i<s.length;i++){
+//         if(s[i]=="I"){
+//             if(s[i+1]=="V"||s[i+1]=="X"){
+//                 continue;
+//             }else{
+//             result+=1
+//             }
            
-        }else if(s[i]=="V"){
-            if(s[i-1]=='I'){
-               result+=4 
-            }else{
-              result+=5
-            }
+//         }else if(s[i]=="V"){
+//             if(s[i-1]=='I'){
+//                result+=4 
+//             }else{
+//               result+=5
+//             }
             
-        }else if(s[i]=="X"){
-            if(s[i+1]=="L"||s[i+1]=="C"){
-                continue  ;
-            }else if(s[i-1]=='I'){
-                result+=9
-            }else{
-                result+=10
-            }
+//         }else if(s[i]=="X"){
+//             if(s[i+1]=="L"||s[i+1]=="C"){
+//                 continue  ;
+//             }else if(s[i-1]=='I'){
+//                 result+=9
+//             }else{
+//                 result+=10
+//             }
             
-        }else if(s[i]=="L"){
-            if(s[i-1]=='X'){
-               result+=40 
-            }else{
-                 result+=50
-            }
+//         }else if(s[i]=="L"){
+//             if(s[i-1]=='X'){
+//                result+=40 
+//             }else{
+//                  result+=50
+//             }
            
-        }else if(s[i]=="C"){
-            if(s[i+1]=="D"||s[i+1]=="M"){
-                continue;
-            }else if(s[i-1]=='X'){
-               result+=90 
-            }else{
-                result+=100
-            }
+//         }else if(s[i]=="C"){
+//             if(s[i+1]=="D"||s[i+1]=="M"){
+//                 continue;
+//             }else if(s[i-1]=='X'){
+//                result+=90 
+//             }else{
+//                 result+=100
+//             }
             
-        }else if(s[i]=="D"){
-            if(s[i-1]=='C'){
-               result+=400 
-            }else{
-                result+=500
-            }
+//         }else if(s[i]=="D"){
+//             if(s[i-1]=='C'){
+//                result+=400 
+//             }else{
+//                 result+=500
+//             }
             
-        }else if(s[i]=="M"){
-            if(s[i-1]=="C"){
-                result+=900
-            }else{
-                result+=1000
-            }
+//         }else if(s[i]=="M"){
+//             if(s[i-1]=="C"){
+//                 result+=900
+//             }else{
+//                 result+=1000
+//             }
             
-        }
-    }
-    return result
-};
+//         }
+//     }
+//     return result
+// };
 
  
+
+
+
+
+
+
+//12
+// Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
+
+ 
+
+// Example 1:
+
+// Input: x = 2.00000, n = 10
+// Output: 1024.00000
+
+// Example 2:
+
+// Input: x = 2.10000, n = 3
+// Output: 9.26100
+/**
+ * @param {number} x
+ * @param {number} n
+ * @return {number}
+ */
+var myPow = function(x, n) {
+    let r=Math.pow(x,n)
+    return r
+};
