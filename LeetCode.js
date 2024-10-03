@@ -668,12 +668,62 @@
 
 // Input: x = 2.10000, n = 3
 // Output: 9.26100
+// /**
+//  * @param {number} x
+//  * @param {number} n
+//  * @return {number}
+//  */
+// var myPow = function(x, n) {
+//     let r=Math.pow(x,n)
+//     return r
+// };
+
+
+
+
+//13
+// Given a string s consisting of words and spaces, return the length of the last word in the string.
+
+// A word is a maximal
+// substring
+// consisting of non-space characters only.
+
+ 
+
+// Example 1:
+
+// Input: s = "Hello World"
+// Output: 5
+// Explanation: The last word is "World" with length 5.
+
+// Example 2:
+
+// Input: s = "   fly me   to   the moon  "
+// Output: 4
+// Explanation: The last word is "moon" with length 4.
+
+// Example 3:
+
+// Input: s = "luffy is still joyboy"
+// Output: 6
+// Explanation: The last word is "joyboy" with length 6.
+
 /**
- * @param {number} x
- * @param {number} n
+ * @param {string} s
  * @return {number}
  */
-var myPow = function(x, n) {
-    let r=Math.pow(x,n)
-    return r
+var lengthOfLastWord = function(s) {
+    var m=s.split(" ")
+var result=''
+var a=[]
+for(let i=0;i<m.length;i++){
+    if(m[i].length==0){
+        continue;
+    }else{
+        a.push(m[i])
+    }
+}
+result=a[a.length-1]
+
+return result.length
 };
