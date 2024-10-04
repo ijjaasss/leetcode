@@ -754,24 +754,59 @@
 // Explanation: s is an empty string "" after removing non-alphanumeric characters.
 // Since an empty string reads the same forward and backward, it is a palindrome.
 
+// /**
+//  * @param {string} s
+//  * @return {boolean}
+//  */
+// var isPalindrome = function(s) {
+//     var result=''
+//  var char = [];
+//  for (let i = 0; i < 26; i++) {
+//      char.push(String.fromCharCode(97 + i));
+//  }
+//  for(let j=0;j<s.length;j++){
+ 
+//  var a=char.includes(s[j].toLowerCase())
+//  var b=Number(s[j])
+//  if(a||!isNaN(b)){
+//      result+=s[j].toLowerCase()
+//  }
+ 
+//  }
+//  return result.split(' ').join('')==result.split(' ').join('').split('').reverse().join('')
+//  };
+
+
+
+
+
+
+//15
+// Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+// You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+// You can return the answer in any order.
+
+ 
+
+// Example 1:
+
+// Input: nums = [2,7,11,15], target = 9
+// Output: [0,1]
+// Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 /**
- * @param {string} s
- * @return {boolean}
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
  */
-var isPalindrome = function(s) {
-    var result=''
- var char = [];
- for (let i = 0; i < 26; i++) {
-     char.push(String.fromCharCode(97 + i));
- }
- for(let j=0;j<s.length;j++){
- 
- var a=char.includes(s[j].toLowerCase())
- var b=Number(s[j])
- if(a||!isNaN(b)){
-     result+=s[j].toLowerCase()
- }
- 
- }
- return result.split(' ').join('')==result.split(' ').join('').split('').reverse().join('')
- };
+var twoSum = function(nums, target) {
+    for(let i=0;i<nums.length;i++){
+        for(let j=0;j<nums.length;j++){
+            if(j!=i&&nums[i]+nums[j]==target){
+                return Array(i,j)
+            }
+        }
+        
+    }
+};
