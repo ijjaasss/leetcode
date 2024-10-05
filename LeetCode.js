@@ -790,23 +790,50 @@
 
  
 
+// // Example 1:
+
+// // Input: nums = [2,7,11,15], target = 9
+// // Output: [0,1]
+// // Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+// /**
+//  * @param {number[]} nums
+//  * @param {number} target
+//  * @return {number[]}
+//  */
+// var twoSum = function(nums, target) {
+//     for(let i=0;i<nums.length;i++){
+//         for(let j=0;j<nums.length;j++){
+//             if(j!=i&&nums[i]+nums[j]==target){
+//                 return Array(i,j)
+//             }
+//         }
+        
+//     }
+// };
+
+
+
+
+
+
+
+
+//16
+// Given two strings s and t, return true if t is an
+// anagram
+// of s, and false otherwise.
+
+ 
+
 // Example 1:
 
-// Input: nums = [2,7,11,15], target = 9
-// Output: [0,1]
-// Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
-    for(let i=0;i<nums.length;i++){
-        for(let j=0;j<nums.length;j++){
-            if(j!=i&&nums[i]+nums[j]==target){
-                return Array(i,j)
-            }
-        }
-        
-    }
-};
+// Input: s = "anagram", t = "nagaram"
+
+// Output: true
+
+// Example 2:
+
+// Input: s = "rat", t = "car"
+
+// Output: false
+
