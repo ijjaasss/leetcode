@@ -837,3 +837,13 @@
 
 // Output: false
 
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    var a=s.split("")
+ var b=t.split("")
+ return a.sort().join('')==b.sort().join('')
+};
