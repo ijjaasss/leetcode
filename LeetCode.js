@@ -876,13 +876,38 @@ var isAnagram = function(s, t) {
 
 // Input: num1 = "456", num2 = "77"
 // Output: "533"
+// /**
+//  * @param {string} num1
+//  * @param {string} num2
+//  * @return {string}
+//  */
+// var addStrings = function(num1, num2) {
+//     var a= BigInt(num1)+BigInt(num2)
+//     var str =`${a}`
+//     return str
+// };
+
+
+//18
+// Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+
+// Example 1:
+// Input: s = "Let's take LeetCode contest"
+// Output: "s'teL ekat edoCteeL tsetnoc"
+// Example 2:
+// Input: s = "Mr Ding"
+// Output: "rM gniD"
+
 /**
- * @param {string} num1
- * @param {string} num2
+ * @param {string} s
  * @return {string}
  */
-var addStrings = function(num1, num2) {
-    var a= BigInt(num1)+BigInt(num2)
-    var str =`${a}`
-    return str
+var reverseWords = function(s) {
+    var arr=s.split(' ')
+ var result=[]
+for(let i=0;i<arr.length;i++){
+    result.push(arr[i].split('').reverse().join(''))
+}
+return result.join(' ')
+    
 };
