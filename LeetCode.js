@@ -902,12 +902,51 @@ var isAnagram = function(s, t) {
  * @param {string} s
  * @return {string}
  */
-var reverseWords = function(s) {
-    var arr=s.split(' ')
- var result=[]
-for(let i=0;i<arr.length;i++){
-    result.push(arr[i].split('').reverse().join(''))
+// var reverseWords = function(s) {
+//     var arr=s.split(' ')
+//  var result=[]
+// for(let i=0;i<arr.length;i++){
+//     result.push(arr[i].split('').reverse().join(''))
+// }
+// return result.join(' ')
+    
+// };
+
+
+
+//19
+
+// Given a string s and an integer k, reverse the first k characters for every 2k characters counting from the start of the string.
+
+// If there are fewer than k characters left, reverse all of them. If there are less than 2k but greater than or equal to k characters, then reverse the first k characters and leave the other as original.
+
+ 
+
+// Example 1:
+
+// Input: s = "abcdefg", k = 2
+// Output: "bacdfeg"
+
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {string}
+ */
+var reverseStr = function(s, k) {
+    var c=1
+var result=''
+for(let i=0;i<s.length;i+=k){
+if(c==1){
+    result+=s.split('').splice(i,k).reverse().join('')
+    c=2
+
+}else if(c==2){
+    result+=s.split('').splice(i,k).join('')
+    c=1
 }
-return result.join(' ')
+
+
+}
+return result
     
 };
