@@ -993,18 +993,80 @@ var isAnagram = function(s, t) {
 // Incrementing by one gives 9 + 1 = 10.
 // Thus, the result should be [1,0].
 
-/**
- * @param {number[]} digits
- * @return {number[]}
- */
-var plusOne = function(digits) {
-    var a=digits.join('')
-    a=BigInt(a)+BigInt(1)
-    a=a.toString()
-    var result=[]
-    for(let i=0;i<a.length;i++){
-       result.push(Number(a[i]))
+// /**
+//  * @param {number[]} digits
+//  * @return {number[]}
+//  */
+// var plusOne = function(digits) {
+//     var a=digits.join('')
+//     a=BigInt(a)+BigInt(1)
+//     a=a.toString()
+//     var result=[]
+//     for(let i=0;i<a.length;i++){
+//        result.push(Number(a[i]))
         
-    }
-    return result
-    };
+//     }
+//     return result
+//     };
+
+
+
+
+
+
+
+// //21
+// Given a string s, reverse only all the vowels in the string and return it.
+
+// The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.
+
+ 
+
+// Example 1:
+
+// Input: s = "IceCreAm"
+
+// Output: "AceCreIm"
+
+// Explanation:
+
+// The vowels in s are ['I', 'e', 'e', 'A']. On reversing the vowels, s becomes "AceCreIm".
+
+// Example 2:
+
+// Input: s = "leetcode"
+
+// Output: "leotcede"
+
+ /**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseVowels = function(s) {
+   if(s.toLowerCase().includes('a')||s.toLowerCase().includes('e')||s.toLowerCase().includes('i')||s.toLowerCase().includes('o')||s.toLowerCase().includes('u')){
+
+   
+}else{
+return s
+   
+}
+ var arr=s.split('')
+var result=[]
+for(let i=0;i<arr.length;i++){
+  if(arr[i].toLowerCase()=='a'||arr[i].toLowerCase()=='e'||arr[i].toLowerCase()=='i'||arr[i].toLowerCase()=='o'||arr[i].toLowerCase()=='u'){
+   result.push(arr[i])
+ arr[i]=' '
+}
+
+}
+result.reverse()
+var l=0
+for(let j=0;j<arr.length;j++){
+  if(arr[j]==' '&&s[j]!=' '){
+   arr[j]=result[l]
+   l++
+  }
+   
+}
+return arr.join('')
+};
