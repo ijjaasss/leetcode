@@ -1036,37 +1036,74 @@ var isAnagram = function(s, t) {
 
 // Input: s = "leetcode"
 
-// Output: "leotcede"
+// // Output: "leotcede"
 
- /**
- * @param {string} s
- * @return {string}
+//  /**
+//  * @param {string} s
+//  * @return {string}
+//  */
+// var reverseVowels = function(s) {
+//    if(s.toLowerCase().includes('a')||s.toLowerCase().includes('e')||s.toLowerCase().includes('i')||s.toLowerCase().includes('o')||s.toLowerCase().includes('u')){
+
+   
+// }else{
+// return s
+   
+// }
+//  var arr=s.split('')
+// var result=[]
+// for(let i=0;i<arr.length;i++){
+//   if(arr[i].toLowerCase()=='a'||arr[i].toLowerCase()=='e'||arr[i].toLowerCase()=='i'||arr[i].toLowerCase()=='o'||arr[i].toLowerCase()=='u'){
+//    result.push(arr[i])
+//  arr[i]=' '
+// }
+
+// }
+// result.reverse()
+// var l=0
+// for(let j=0;j<arr.length;j++){
+//   if(arr[j]==' '&&s[j]!=' '){
+//    arr[j]=result[l]
+//    l++
+//   }
+   
+// }
+// return arr.join('')
+// };
+
+
+
+
+
+//22
+// Given an integer array nums where every element appears three times except for one, which appears exactly once. Find the single element and return it.
+
+// You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+ 
+
+// Example 1:
+
+// Input: nums = [2,2,3,2]
+// Output: 3
+/**
+ * @param {number[]} nums
+ * @return {number}
  */
-var reverseVowels = function(s) {
-   if(s.toLowerCase().includes('a')||s.toLowerCase().includes('e')||s.toLowerCase().includes('i')||s.toLowerCase().includes('o')||s.toLowerCase().includes('u')){
-
+var singleNumber = function(nums) {
+  for(let i=0;i<nums.length;i++){
+   var flag=0
+   for(let j=0;j<nums.length;j++){
+       if(i!=j&&nums[i]==nums[j]){
+               flag++
+               break
+       }
+   }
+  if(flag==0){
+  return nums[i]
    
-}else{
-return s
-   
-}
- var arr=s.split('')
-var result=[]
-for(let i=0;i<arr.length;i++){
-  if(arr[i].toLowerCase()=='a'||arr[i].toLowerCase()=='e'||arr[i].toLowerCase()=='i'||arr[i].toLowerCase()=='o'||arr[i].toLowerCase()=='u'){
-   result.push(arr[i])
- arr[i]=' '
-}
-
-}
-result.reverse()
-var l=0
-for(let j=0;j<arr.length;j++){
-  if(arr[j]==' '&&s[j]!=' '){
-   arr[j]=result[l]
-   l++
   }
    
 }
-return arr.join('')
+
 };
