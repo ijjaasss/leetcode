@@ -1082,28 +1082,62 @@ var isAnagram = function(s, t) {
 
  
 
+// // Example 1:
+
+// // Input: nums = [2,2,3,2]
+// // Output: 3
+// /**
+//  * @param {number[]} nums
+//  * @return {number}
+//  */
+// var singleNumber = function(nums) {
+//   for(let i=0;i<nums.length;i++){
+//    var flag=0
+//    for(let j=0;j<nums.length;j++){
+//        if(i!=j&&nums[i]==nums[j]){
+//                flag++
+//                break
+//        }
+//    }
+//   if(flag==0){
+//   return nums[i]
+   
+//   }
+   
+// }
+
+// };
+
+
+//23
+// You are given a string num, representing a large integer. Return the largest-valued odd integer (as a string) that is a non-empty substring of num, or an empty string "" if no odd integer exists.
+
+// A substring is a contiguous sequence of characters within a string.
+
+ 
+
 // Example 1:
 
-// Input: nums = [2,2,3,2]
-// Output: 3
+// Input: num = "52"
+// Output: "5"
 /**
- * @param {number[]} nums
- * @return {number}
+ * @param {string} num
+ * @return {string}
  */
-var singleNumber = function(nums) {
-  for(let i=0;i<nums.length;i++){
-   var flag=0
-   for(let j=0;j<nums.length;j++){
-       if(i!=j&&nums[i]==nums[j]){
-               flag++
-               break
-       }
-   }
-  if(flag==0){
-  return nums[i]
-   
+var largestOddNumber = function(num) {
+    
+  var result = "";
+  var l = -1; 
+  
+  for (let i = num.length - 1; i >= 0; i--) {
+      if (parseInt(num[i]) % 2 !== 0) {
+          l = i; 
+          break; 
+      }
   }
-   
-}
-
-};
+  
+  if (l !== -1) { 
+      result += num.slice(0, l + 1); 
+  }
+  return result
+  };
