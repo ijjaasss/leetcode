@@ -1180,34 +1180,50 @@ var isAnagram = function(s, t) {
 // Output: ""
 // Explanation: No substring of length 3 consists of only one unique digit. Therefore, there are no good integers.
 
- /**
- * @param {string} num
- * @return {string}
+
+
+
+
+
+
+
+//25
+// You are given an integer array nums. The unique elements of an array are the elements that appear exactly once in the array.
+
+// Return the sum of all the unique elements of nums.
+
+ 
+
+// Example 1:
+
+// Input: nums = [1,2,3,2]
+// Output: 4
+// Explanation: The unique elements are [1,3], and the sum is 4.
+
+// Example 2:
+
+// Input: nums = [1,1,1,1,1]
+// Output: 0
+// Explanation: There are no unique elements, and the sum is 0.
+/**
+ * @param {number[]} nums
+ * @return {number}
  */
-var largestGoodInteger = function(num) {
-    var matche=num.match(/(\d)\1+/g)
-    if(matche==null){
-        return ""
+var sumOfUnique = function(nums) {
+    var res=[]
+for(let i=0;i<nums.length;i++){
+    var flag=0
+    for(let j=0;j<nums.length;j++){
+        if(i!=j&&nums[i]==nums[j]){
+            flag++;
+            break;
+        }
     }
-var result=[]
-for(let i=0;i<matche.length;i++){
-  if(matche[i].length==3){
-    result.push(matche[i])
-  }else if(matche[i].length>3){
-   result.push(matche[i].slice(0,3))
+   if(flag==0){
+    res.push(nums[i])
+   }
     
-  }
-  
 }
-if(result.length==0){
-  
-    return ""
-}
-var res=Math.max(...result)
-if (res==0){
-    return '000'
-}
-return res.toString()
-
-
+var sum=res.reduce((acc,val)=>acc+val,0)
+return sum
 };
