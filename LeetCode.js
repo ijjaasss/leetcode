@@ -1608,3 +1608,49 @@ if(t.length!==n.length){
 return true
 
 };
+
+
+
+
+//31
+// Given an integer array nums of size n, return the number with the value closest to 0 in nums. If there are multiple answers, return the number with the largest value.
+
+ 
+
+// Example 1:
+
+// Input: nums = [-4,-2,1,4,8]
+// Output: 1
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findClosestNumber = function(nums) {
+   nums=nums.sort((a,b)=>a-b)
+var po=nums.filter((val)=>val>0)
+var ne=nums.filter((val)=>val<0)
+var zero=nums.includes(0)
+
+
+if(zero){
+  return 0
+  
+} else if(po.length==0){
+   return ne[ne.length-1]
+   
+}else if(ne.length==0){
+   return po[0]
+   
+}else if(Math.abs(ne[ne.length-1])==po[0]){
+   return po[0]
+   
+}else if(po[0]<Math.abs(ne[ne.length-1])){
+return po[0]
+
+}else{
+   return ne[ne.length-1]
+   
+}
+
+};
