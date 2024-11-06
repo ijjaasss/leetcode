@@ -1485,3 +1485,126 @@ return sum
 
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //30
+// Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
+
+//     Each row must contain the digits 1-9 without repetition.
+//     Each column must contain the digits 1-9 without repetition.
+//     Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.
+// Input: board = 
+// [["5","3",".",".","7",".",".",".","."]
+// ,["6",".",".","1","9","5",".",".","."]
+// ,[".","9","8",".",".",".",".","6","."]
+// ,["8",".",".",".","6",".",".",".","3"]
+// ,["4",".",".","8",".","3",".",".","1"]
+// ,["7",".",".",".","2",".",".",".","6"]
+// ,[".","6",".",".",".",".","2","8","."]
+// ,[".",".",".","4","1","9",".",".","5"]
+// ,[".",".",".",".","8",".",".","7","9"]]
+// Output: true
+/**
+ * @param {character[][]} board
+ * @return {boolean}
+ */
+var isValidSudoku = function(board) {
+   if(board.length!=9){
+   return false
+}
+
+   var eq=[[],[],[]]
+
+for(let i=0;i<board.length;i++){
+   var l=0
+   for(let j=0;j<3;j++){
+       var t=board[i].slice(l,l+3)
+       if(l==0){
+           eq[0].push(t)
+       }else if(l==3){
+           eq[1].push(t)
+       }
+       else if(l==6){
+           eq[2].push(t)
+       }
+      
+       l+=3
+   }
+
+   if(eq[1].length==3){ 
+      var t=eq[1].flat().filter((val)=>Number(val))
+      var n=[...new Set(t)]
+      if(t.length!=n.length){
+       return false
+      }
+       eq[1]=[]
+   }
+   if(eq[0].length==3){ 
+
+       
+      var t=eq[0].flat().filter((val)=>Number(val))
+      var n=[...new Set(t)]
+      if(t.length!=n.length){
+       return false
+      }
+       eq[0]=[]
+   }
+   if(eq[2].length==3){ 
+
+       
+var t=eq[2].flat().filter((val)=>Number(val))
+var n=[...new Set(t)]
+if(t.length!=n.length){
+return false
+}
+eq[2]=[]
+}
+   
+
+  
+  
+   
+}
+       
+for(let i=0;i<board.length;i++){
+   if(board[i].length!=9){
+   return false
+}
+   var res=[]
+  var t=board[i].filter((val,index)=>Number(val))
+ 
+  
+  var n=[...new Set(t)]
+   if(n.length!==t.length){
+       return false
+       
+   }
+   for(let j=0;j<board.length;j++){
+       
+       res.push(board[j][i])  
+      
+   }
+   var t=res.filter((val,index)=>Number(val))
+   var n=[...new Set(t)]
+if(t.length!==n.length){
+   return false
+   
+}
+  
+   
+}
+return true
+
+};
