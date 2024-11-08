@@ -1888,3 +1888,22 @@ return res
 // Input: s = "is2 sentence4 This1 a3"
 // Output: "This is a sentence"
 // Explanation: Sort the words in s to their original positions "This1 is2 a3 sentence4", then remove the numbers.
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var sortSentence = function(s) {
+   
+   var num=s.split('')
+   s=s.split(' ')
+   num=num.filter((val)=>Number(val))
+   var res=[]
+   for(let i=0;i<s.length;i++){
+      var a= s[i].split('').filter((val)=>!Number(val)).join('')
+      res[Number(num[i]-1)]=a
+     
+       
+   }
+   return res.join(' ')
+   
+   };
