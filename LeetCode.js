@@ -2183,3 +2183,38 @@ return triangle[1]
    
 }
 };
+
+//46
+// Given an array of strings strs, group the
+// anagrams
+// together. You can return the answer in any order.
+
+ 
+
+// Example 1:
+
+// Input: strs = ["eat","tea","tan","ate","nat","bat"]
+
+// Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+var groupAnagrams = function(strs) {
+    var arr=strs.map((val)=>val.split('').sort().join(''))
+var a=[...new Set(arr)]
+var res=[]
+for(let i=0;i<a.length;i++){
+    var temp=[]
+    for(let j=0;j<arr.length;j++){
+        if(a[i]==arr[j]){
+            temp.push(strs[j])
+        }
+    }
+   res.push(temp.sort())
+    
+}
+return res.reverse()
+
+};
