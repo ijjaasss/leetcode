@@ -2064,3 +2064,40 @@ for(let i=0;i<s.length;i++){
 var sum=arr.reduce((acc,val)=>acc+val,0)
 return sum
 };
+
+
+//43
+// Given an array of string words, return all strings in words that is a substring of another word. You can return the answer in any order.
+
+// A substring is a contiguous sequence of characters within a string
+
+ 
+
+// Example 1:
+
+// Input: words = ["mass","as","hero","superhero"]
+// Output: ["as","hero"]
+// Explanation: "as" is substring of "mass" and "hero" is substring of "superhero".
+// ["hero","as"] is also a valid answer.
+
+/**
+ * @param {string[]} words
+ * @return {string[]}
+ */
+var stringMatching = function(words) {
+   var result=[]
+for(let i=0;i<words.length;i++){
+   var flag=0
+   for(let j=0;j<words.length;j++){
+       if(words[j].includes(words[i])&&i!=j){
+           flag++
+           break;
+       }
+   }
+   if(flag==1){
+       result.push(words[i])
+       
+   }
+}
+return result
+};
