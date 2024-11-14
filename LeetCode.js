@@ -2264,3 +2264,41 @@ for(let i=0;i<t;i++){
 }
 return false
 };
+
+
+
+//48
+
+// Given a date, return the corresponding day of the week for that date.
+
+// The input is given as three integers representing the day, month and year respectively.
+
+// Return the answer as one of the following values {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}.
+
+ 
+
+// Example 1:
+
+// Input: day = 31, month = 8, year = 2019
+// Output: "Saturday"
+/**
+ * @param {number} day
+ * @param {number} month
+ * @param {number} year
+ * @return {string}
+ */
+var dayOfTheWeek = function(day, month, year) {
+   var date = new Date(`${year}-${month}-${day}`).toDateString().split(' ')[0]
+
+
+var weaks={
+ 'Sun':"Sunday",
+ "Mon":'Monday',
+ 'Tue':'Tuesday',
+ 'Wed':'Wednesday',
+ 'Thu':'Thursday',
+  'Fri':'Friday',
+  'Sat':'Saturday'
+}
+return weaks[date]
+};
