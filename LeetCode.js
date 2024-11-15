@@ -2318,3 +2318,17 @@ return weaks[date]
 
 // Input: words = ["leet","code"], x = "e"
 // Output: [0,1]
+/**
+ * @param {string[]} words
+ * @param {character} x
+ * @return {number[]}
+ */
+var findWordsContaining = function(words, x) {
+   var result=[]
+   for(let i=0;i<words.length;i++){
+       if(words[i].includes(x)){
+           result.push(i)
+       }
+   }
+return result
+};
