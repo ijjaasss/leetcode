@@ -2396,3 +2396,46 @@ var l=nums.lastIndexOf(target)
 
 return result
 };
+
+
+//52
+// You are given a string num consisting of only digits. A string of digits is called balanced if the sum of the digits at even indices is equal to the sum of digits at odd indices.
+
+// Return true if num is balanced, otherwise return false.
+
+ 
+
+// Example 1:
+
+// Input: num = "1234"
+
+// Output: false
+
+// Explanation:
+
+//     The sum of digits at even indices is 1 + 3 == 4, and the sum of digits at odd indices is 2 + 4 == 6.
+//     Since 4 is not equal to 6, num is not balanced.
+
+// Example 2:
+
+// Input: num = "24123"
+
+// Output: true
+
+/**
+ * @param {string} num
+ * @return {boolean}
+ */
+var isBalanced = function(num) {
+   var sum1=0
+var sum2=0
+for(let i=0;i<num.length;i++){
+   if(i%2==0){
+       sum1+=Number(num[i])
+       
+   }else{
+       sum2+=Number(num[i])
+   }
+}
+return sum1==sum2
+};
