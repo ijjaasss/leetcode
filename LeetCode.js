@@ -2705,3 +2705,28 @@ var hammingWeight = function(n) {
 var b=a.filter((val)=>parseInt(val))
 return b.length
 };
+
+
+//60
+// Given a m x n matrix grid which is sorted in non-increasing order both row-wise and column-wise, return the number of negative numbers in grid.
+
+ 
+
+// Example 1:
+
+// Input: grid = [[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,-3]]
+// Output: 8
+
+
+// Example 2:
+// Input: grid = [[3,2],[1,0]]
+// Output: 0
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+var countNegatives = function(grid) {
+   var a=grid.flat(Infinity)
+   a=a.filter((val)=>val<0)
+   return a.length
+};
