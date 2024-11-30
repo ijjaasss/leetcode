@@ -2665,3 +2665,43 @@ var convertDateToBinary = function(date) {
 var m=n.map((val)=>parseInt(val).toString(2))
 return m.join('-')
 };
+
+
+
+//59
+// Given a positive integer n, write a function that returns the number of
+// set bits
+// in its binary representation (also known as the Hamming weight).
+
+ 
+
+// Example 1:
+
+// Input: n = 11
+
+// Output: 3
+
+// Explanation:
+
+// The input binary string 1011 has a total of three set bits.
+
+// Example 2:
+
+// Input: n = 128
+
+// Output: 1
+
+// Explanation:
+
+// The input binary string 10000000 has a total of one set bit.
+
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var hammingWeight = function(n) {
+   var a=n.toString(2).split('')
+var b=a.filter((val)=>parseInt(val))
+return b.length
+};
