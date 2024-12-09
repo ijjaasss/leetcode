@@ -2837,3 +2837,36 @@ arr.push(i)
 return arr
 
 };
+
+
+
+//64
+// Given a 0-indexed m x n integer matrix matrix, create a new 0-indexed matrix called answer. Make answer equal to matrix, then replace each element with the value -1 with the maximum element in its respective column.
+
+// Return the matrix answer.
+// Input: matrix = [[1,2,-1],[4,-1,6],[7,8,9]]
+// Output: [[1,2,9],[4,8,6],[7,8,9]]
+
+// Input: matrix = [[3,-1],[5,2]]
+// Output: [[3,2],[5,2]]
+
+/**
+ * @param {number[][]} matrix
+ * @return {number[][]}
+ */
+var modifiedMatrix = function(matrix) {
+   for(let i=0;i<matrix.length;i++){
+  
+   for(let j=0;j<matrix[i].length;j++){
+    if(matrix[i][j]<0){
+       var arr=[]
+       for(let k=0;k<matrix.length;k++){
+      arr.push(matrix[k][j])
+       }
+       matrix[i][j]=Math.max(...arr)
+       
+    }
+   }
+}
+return matrix
+};
