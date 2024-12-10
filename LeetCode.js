@@ -2915,3 +2915,29 @@ arr.push(Math.max(...temp))
 var sum = arr.reduce((acc,val)=>acc+val,0)
 return sum
 };
+
+
+//66
+// You are given an array of characters letters that is sorted in non-decreasing order, and a character target. There are at least two different characters in letters.
+
+// Return the smallest character in letters that is lexicographically greater than target. If such a character does not exist, return the first character in letters.
+
+ 
+
+// Example 1:
+
+// Input: letters = ["c","f","j"], target = "a"
+// Output: "c"
+/**
+ * @param {character[]} letters
+ * @param {character} target
+ * @return {character}
+ */
+var nextGreatestLetter = function(letters, target) {
+   var a=letters.filter((val)=>val.charCodeAt()>target.charCodeAt())
+   if(a.length==0){
+       var a=letters.filter((val)=>val!=target)
+      
+   }
+   return a[0]
+   };
