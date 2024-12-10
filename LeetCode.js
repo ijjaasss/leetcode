@@ -2941,3 +2941,32 @@ var nextGreatestLetter = function(letters, target) {
    }
    return a[0]
    };
+
+   //67
+//    You are given a positive number n.
+
+// Return the smallest number x greater than or equal to n, such that the binary representation of x contains only
+// set bits
+
+ 
+
+// Example 1:
+
+// Input: n = 5
+
+// Output: 7
+
+// Explanation:
+
+// The binary representation of 7 is "111".
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var smallestNumber = function(n) {
+   var a=n.toString(2).split('')
+a=a.map((val)=>val='1')
+a=a.join('')
+return parseInt(a,2)
+};
