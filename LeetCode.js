@@ -3517,3 +3517,38 @@ return parseInt(first)+parseInt(second)==parseInt(third)
 // - Integers in the range [1, 5] that are not divisible by 6 are [1,2,3,4,5], num1 is the sum of those integers = 15.
 // - Integers in the range [1, 5] that are divisible by 6 are [], num2 is the sum of those integers = 0.
 // We return 15 - 0 = 15 as the answer.
+
+
+//80
+// Given an integer number n, return the difference between the product of its digits and the sum of its digits.
+
+ 
+
+// Example 1:
+
+// Input: n = 234
+// Output: 15 
+// Explanation: 
+// Product of digits = 2 * 3 * 4 = 24 
+// Sum of digits = 2 + 3 + 4 = 9 
+// Result = 24 - 9 = 15
+
+// Example 2:
+
+// Input: n = 4421
+// Output: 21
+// Explanation: 
+// Product of digits = 4 * 4 * 2 * 1 = 32 
+// Sum of digits = 4 + 4 + 2 + 1 = 11 
+// Result = 32 - 11 = 21
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var subtractProductAndSum = function(n) {
+   var temp=n.toString().split('')
+var multiple=temp.reduce((acc,val)=>acc*Number(val))
+var sum=temp.reduce((acc,val)=>acc+Number(val),0)
+return multiple-sum
+};
